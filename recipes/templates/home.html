@@ -1,0 +1,15 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<h1>Добро пожаловать!</h1>
+<p>Вот несколько случайных рецептов:</p>
+<ul>
+    {% for recipe in random_recipes %}
+    <li><a href="{% url 'recipe-detail' recipe.id %}">{{ recipe.title }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add-recipe' %}">Добавить рецепт</a>
+{% endblock %}

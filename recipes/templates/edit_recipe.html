@@ -1,0 +1,13 @@
+<!-- templates/edit_recipe.html -->
+{% extends 'base.html' %}
+
+{% block title %}Редактировать рецепт{% endblock %}
+
+{% block content %}
+<h1>Редактировать рецепт</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить изменения</button>
+</form>
+{% endblock %}
